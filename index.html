@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>P2P Direct File Transfer</title>
+  <title>share-web</title>
   <link rel="stylesheet" href="style.css">
-  <!-- مكتبة PeerJS للربط المباشر -->
   <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
 </head>
 <body>
   <div class="container">
-    <h1>📡 P2P Direct Transfer</h1>
-    <p class="subtitle">Secure direct file and text sharing without cloud servers</p>
+    <h1>📡 share-web</h1>
+    <p class="subtitle">secure direct file sharing</p>
 
     <!-- Start Screen -->
     <div id="screen-start" class="screen">
@@ -20,7 +19,7 @@
       </div>
 
       <div id="join-box">
-        <input id="peer-id-input" type="text" placeholder="Enter Peer ID to connect">
+        <input id="peer-id-input" type="text" maxlength="6" placeholder="Enter 6-digit Friend ID">
         <button id="btn-connect" class="btn btn-primary">Connect</button>
       </div>
       <p id="start-error" class="error hidden"></p>
@@ -28,7 +27,7 @@
 
     <!-- Active Session Screen -->
     <div id="screen-session" class="screen hidden">
-      <div id="connection-status" class="status-success">Connected directly (P2P)!</div>
+      <div id="connection-status" class="status-success">Connected directly with Friend!</div>
 
       <div id="drop-zone" class="drop-zone">
         <p>Drag files here or click to browse</p>
