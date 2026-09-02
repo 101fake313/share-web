@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P2P Direct File Transfer</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- مكتبة PeerJS للربط المباشر -->
+  <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>📡 P2P Direct Transfer</h1>
+    <p class="subtitle">Secure direct file and text sharing without cloud servers</p>
+
+    <!-- Start Screen -->
+    <div id="screen-start" class="screen">
+      <div id="my-id-box" class="code-banner">
+        Your ID: <span id="my-id">Generating...</span>
+      </div>
+
+      <div id="join-box">
+        <input id="peer-id-input" type="text" placeholder="Enter Peer ID to connect">
+        <button id="btn-connect" class="btn btn-primary">Connect</button>
+      </div>
+      <p id="start-error" class="error hidden"></p>
+    </div>
+
+    <!-- Active Session Screen -->
+    <div id="screen-session" class="screen hidden">
+      <div id="connection-status" class="status-success">Connected directly (P2P)!</div>
+
+      <div id="drop-zone" class="drop-zone">
+        <p>Drag files here or click to browse</p>
+        <input id="file-input" type="file" multiple hidden>
+      </div>
+
+      <div class="text-share">
+        <textarea id="text-input" placeholder="Type a message to share..."></textarea>
+        <button id="btn-send-text" class="btn btn-primary">Send Text</button>
+      </div>
+
+      <h3>Messages</h3>
+      <ul id="texts-list" class="list"></ul>
+
+      <h3>Received Files</h3>
+      <ul id="files-list" class="list"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
